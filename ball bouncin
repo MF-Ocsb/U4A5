@@ -1,0 +1,50 @@
+import pygame
+import random
+from pygame import Color, draw, display, time
+from pygame.draw_py import _draw_aaline_dx
+
+# Variables
+
+SCREEN_WIDTH = 600
+SCREEN_HEIGHT = 400
+RADIUS = 30
+
+centerBallX = 250
+centerBallY = 250
+
+# change position of ball
+dx = random.randint(2, 4)
+dy = random.randint(2, 4)
+
+# initialize pygame modules
+pygame.init()
+
+clock = time.Clock()
+
+# create surface for graphics display
+gameDisplay = display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
+
+while True:
+
+    # white background
+    gameDisplay.fill(Color('white'))
+
+    centerBallX = centerBallX + dx
+    centerBallY = centerBallY + dy
+
+    draw.circle(gameDisplay, Color('cyan'), (centerBallX, centerBallY), RADIUS)
+
+    draw.circle((gameDisplay, Color('blue'), (centerBallX, centerBallY), 10))
+
+    if centerBallX + RADIUS > SCREEN_WIDTH or centerBallX - RADIUS < 0:
+        dx = -dx
+
+    if centerBallY + RADIUS > SCREEN_HEIGHT or centerBallY - RADIUS < 0:
+        dy = -dy
+
+    # show the graphics on the screen
+    display.flip()
+
+
+    clock.tick(50)
