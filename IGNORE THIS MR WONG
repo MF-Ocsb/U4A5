@@ -1,0 +1,76 @@
+<html>
+<script>
+var total = 0
+var d4t = 0
+var d6t = 0
+var d8t = 0
+var d10t = 0
+var d12t = 0
+var d20t = 0
+var d144t = 0
+do {
+    var die = prompt ("What die are you using? (4, 6, 8, 10, 12, 20, 144, done)")
+    if (die != "done") {
+        var count = prompt ("How many of this die are you rolling?")
+        if (die == 4) {
+            do {
+                var res = Math.floor((Math.random() * 4) + 1);
+                alert(res);
+                var d4t = Number(res) + total
+                count = Number(count) - 1
+            } while (count > 0)
+        }
+        if (die == 6) {
+            do {
+                var res = Math.floor((Math.random() * 6) + 1);
+                alert(res);
+                var d6t = Number(res) + total
+                count = Number(count) - 1
+            } while (count > 0)
+        }
+        if (die == 8) {
+            do {
+                var res = Math.floor((Math.random() * 8) + 1);
+                alert(res);
+                var d8t = Number(res) + total
+                count = Number(count) - 1
+            } while (count > 0)
+        }
+        if (die == 10) {
+            do {
+                var res = Math.floor((Math.random() * 10) + 1);
+                alert(res);
+                var d10t = Number(res) + total
+                count = Number(count) - 1
+            } while (count > 0)
+        }
+        if (die == 12) {
+            do {
+                var res = Math.floor((Math.random() * 12) + 1);
+                alert(res);
+                var d12t = Number(res) + total
+                count = Number(count) - 1
+            } while (count > 0)
+        }
+        if (die == 20) {
+            do {
+                var res = Math.floor((Math.random() * 20) + 1);
+                alert(res);
+                var d20t = Number(res) + total
+                count = Number(count) - 1
+            } while (count > 0)
+        }
+        if (die == 144) {
+            do {
+                var res = Math.floor((Math.random() * 144) + 1);
+                alert(res);
+                var d144t = Number(res) + total
+                count = Number(count) - 1
+            } while (count > 0)
+        }
+    }
+} while (die != "done")
+var total = Number(d4t) + Number(d6t) + Number(d8t) + Number(d10t) + Number(d12t) + Number(d20t) + Number(d144t) + 
+alert("Your total is " + total + "\nd4 total = " + d4t + "\nd6 total = " + d6t + "\nd8 total = " + d8t + "\nd10 total = " + d10t + "\nd12 total = " + d12t + "\nd20 total = " + d20t + "\nd144 total = " + d144t)
+</script>
+</html>
